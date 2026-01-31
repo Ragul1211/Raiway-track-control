@@ -21,7 +21,7 @@
       min-height: 100vh;
       color: #ffffff;
       background: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d")
-                  center/cover no-repeat fixed;
+        center / cover no-repeat fixed;
       position: relative;
     }
 
@@ -87,7 +87,7 @@
       border: none;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 0 15px rgba(255,0,0,0.6);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
     }
 
     /* ===== HERO ===== */
@@ -120,7 +120,7 @@
       justify-content: center;
     }
 
-    .hero-buttons button {
+    .hero-buttons a button {
       padding: 14px 30px;
       border-radius: 30px;
       border: none;
@@ -151,12 +151,15 @@
 
 <header>
   <div class="logo">🚆 RailSafe</div>
+
   <nav>
     <a href="Railways safety.html">Home</a>
-    
     <a href="about.html">About</a>
   </nav>
-  <a href="sos.html"><button class="sos-btn">SOS</button></a>
+
+  <a href="sos.html">
+    <button class="sos-btn">SOS</button>
+  </a>
 </header>
 
 <section class="hero">
@@ -167,8 +170,12 @@
   </p>
 
   <div class="hero-buttons">
-    <a href="features.html"><button class="start-btn">Explore Features</button></a>
-    <button class="learn-btn">Learn More</button>
+    <a href="features.html">
+      <button class="start-btn">Explore Features</button>
+    </a>
+    <a href="#">
+      <button class="learn-btn">Learn More</button>
+    </a>
   </div>
 </section>
 

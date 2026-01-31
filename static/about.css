@@ -1,0 +1,110 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",sans-serif;
+}
+
+/* ===== BACKGROUND (TRAIN THEME) ===== */
+body{
+  min-height:100vh;
+  color:#ffffff;
+  background:url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d")
+             center/cover no-repeat fixed;
+  position:relative;
+}
+
+/* Dark overlay */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(
+    rgba(2,12,20,0.88),
+    rgba(2,12,20,0.92)
+  );
+  z-index:-1;
+}
+
+/* ===== HEADER (NO LINKS) ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px 8%;
+  background:rgba(0,0,0,0.55);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:orange;
+  letter-spacing:1px;
+}
+
+/* ===== ABOUT CONTENT ===== */
+.about-container{
+  padding:150px 12% 90px;
+  text-align:center;
+}
+
+.about-container h1{
+  font-size:44px;
+  margin-bottom:20px;
+}
+
+.about-container p{
+  font-size:18px;
+  color:#dcdcdc;
+  max-width:900px;
+  margin:18px auto;
+  line-height:1.7;
+}
+
+/* ===== INFO CARDS ===== */
+.about-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,300px));
+  gap:30px;
+  justify-content:center;
+  margin-top:60px;
+}
+
+.about-card{
+  background:rgba(255,255,255,0.08);
+  padding:30px 25px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(6px);
+  transition:0.3s;
+}
+
+.about-card:hover{
+  transform:translateY(-6px);
+  background:rgba(0,255,200,0.12);
+}
+
+.about-card h3{
+  color:#00ffc8;
+  margin-bottom:12px;
+  font-size:20px;
+}
+
+.about-card p{
+  font-size:15px;
+  color:#e0e0e0;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#000;
+  text-align:center;
+  padding:18px;
+  font-size:14px;
+  color:#aaa;
+}

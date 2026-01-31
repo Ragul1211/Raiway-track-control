@@ -7,59 +7,9 @@
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: white;
-    }
-
-    #topbar {
-      height: 55px;
-      background: #1f1f1f;
-      display: flex;
-      align-items: center;
-      padding: 0 15px;
-      font-size: 18px;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0,0,0,.5);
-    }
-
-    #map {
-      width: 100%;
-      height: calc(100vh - 55px);
-    }
-
-    .control-box {
-      position: absolute;
-      top: 70px;
-      left: 10px;
-      background: white;
-      color: black;
-      padding: 10px;
-      border-radius: 6px;
-      z-index: 1000;
-      font-size: 14px;
-    }
-
-    input {
-      width: 180px;
-      padding: 6px;
-      margin: 3px 0;
-    }
-
-    button {
-      width: 100%;
-      padding: 6px;
-      background: #007bff;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
+  
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="../static/map.css">
 </head>
 
 <body>
@@ -78,18 +28,18 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
+  // Initialize map
   var map = L.map('map').setView([22.5937, 78.9629], 5);
 
-  // Google style map tiles
+  // Base tiles
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     maxZoom: 19,
   }).addTo(map);
 
   // Railway tracks overlay
-  var railLayer = L.tileLayer(
-    'https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',
-    { maxZoom: 19 }
-  ).addTo(map);
+  L.tileLayer('https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png', {
+    maxZoom: 19
+  }).addTo(map);
 
   // Example stations
   var stations = [
@@ -99,12 +49,11 @@
     ["Madurai", 9.9252, 78.1198]
   ];
 
-  stations.forEach(s => {
+  stations.forEach(function(s) {
     L.marker([s[1], s[2]])
-      .addTo(map)
+      .addTo(map) 
       .bindPopup("🚉 " + s[0]);
   });
-
 </script>
 
 </body>
